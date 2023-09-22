@@ -1,4 +1,8 @@
-﻿namespace ExerciseCollection;
+﻿
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ExerciseCollection;
 
 class Program
 {
@@ -45,7 +49,7 @@ class Program
 
         // create a list of UserErrors
         List<UserError> userErrors = new List<UserError>();
-
+      
         var numericInputError = new NumericInputError();
         var textInputError = new TextInputError();
         var customError1 = new CustomError1();
@@ -57,11 +61,73 @@ class Program
         userErrors.Add(customError1);
         userErrors.Add(customError2);
         userErrors.Add(customError3);
-        
+
         foreach(var error in userErrors)
         {
            Console.WriteLine(error.UEMessage());
         }
+
+        // create a list of Animals
+        List<Animal> animals = new List<Animal>
+        {
+            new Horse { Name = "Fido", Age = 3, Species = "Equine", Gender = "Male", Weight = 1000 },
+            new Bird { Name = "Tweety", Age = 2, Species = "Bird", Gender = "Female", Weight = 0.1 },
+            new Dog { Name = "Rex", Age = 5, Species = "Canine", Gender = "Male", Weight = 25 },
+            new Wolfman { Name = "Wolfgang", Age = 30, Species = "Wolfman", Gender = "Male", Weight = 180 },
+            new Swan { Name = "Grace", Age = 8, Species = "Swan", Gender = "Female", Weight = 10 }
+        };
+
+        // using foreach loop through Animal list
+        foreach (var animal in animals)
+        {
+            // 
+            if (animal is Wolfman wolfman)
+            {
+                if (wolfman is IPerson)
+                {
+                    Console.WriteLine($"I am a {wolfman.GetType().Name} and {wolfman.Talk()}");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"{animal.Name} is a {animal.GetType().Name}");
+            }
+
+        }
+
+        // create a list of dogs with a horse in
+        // Varför fungerar int de?
+        // för att List<Dog> kan bara innerhåll objekt av typen dog eller dess subklasser.Horse klass är inte subklass av Dog.
+
+        // Vilken typ måste listan vara för att alla klasser skall kunna lagras tillsammans.
+        //en gemensam överordnad klass, ett gemensamt interface, object
+
+        List<object> dogs = new List<object>
+        {
+            new Horse{ Name = "Fido", Age = 3, Species = "Equine", Gender = "Male", Weight = 1000 },
+            new Dog { Name = "Rex", Age = 5, Species = "Canine", Gender = "Male", Weight = 25 },
+            new Wolfman { Name = "Wolfgang", Age = 30, Species = "Wolfman", Gender = "Male", Weight = 180 },
+            new Swan { Name = "Grace", Age = 8, Species = "Swan", Gender = "Female", Weight = 10 }
+        };
+
+        // print out all animals Stats
+        // förklara vad det är som händer?
+        // jag använder en foreach loop för att skriva ut samtliga animals stats.
+
+        foreach (var animal in animals)
+        {
+            // Check the current animal is of type of Dog, customDog is a new variable of type Dog
+            if (animal is Dog customDog)
+            {
+                // so the customDog to call CustomMethod() from Dog class
+                Console.WriteLine($"{animal.Stats()}\n{customDog.CustomMethod()}");
+            }
+            else
+            {
+                Console.WriteLine($"{animal.Name}");
+            }
+        }
+
     }
 }
 
