@@ -80,19 +80,16 @@ class Program
         // using foreach loop through Animal list
         foreach (var animal in animals)
         {
-            // 
+            // Check if the current animal is of type Wolfman
             if (animal is Wolfman wolfman)
             {
-                if (wolfman is IPerson)
-                {
-                    Console.WriteLine($"I am a {wolfman.GetType().Name} and {wolfman.Talk()}");
-                }
+                Console.WriteLine
+                (   // Check if the wolfman is of type IPerson
+                    wolfman is IPerson
+                    ? $"I am a {wolfman.GetType().Name} and {wolfman.Talk()}"
+                    : $"{animal.Name} is a {animal.GetType().Name}"
+                );
             }
-            else
-            {
-                Console.WriteLine($"{animal.Name} is a {animal.GetType().Name}");
-            }
-
         }
 
         // create a list of dogs with a horse in
@@ -116,16 +113,14 @@ class Program
 
         foreach (var animal in animals)
         {
-            // Check the current animal is of type of Dog, customDog is a new variable of type Dog
-            if (animal is Dog customDog)
-            {
-                // so the customDog to call CustomMethod() from Dog class
-                Console.WriteLine($"{animal.Stats()}\n{customDog.CustomMethod()}");
-            }
-            else
-            {
-                Console.WriteLine($"{animal.Name}");
-            }
+            Console.WriteLine
+            (
+                 // Check the current animal is of type of Dog, customDog is a new variable of type Dog
+                 animal is Dog customDog
+                    // if it is a dog get access and use customDog to call CustomMethod() from Dog class
+                    ? $"{animal.Stats()}\n{customDog.CustomMethod()}"
+                    : $"{animal.Name}"
+            );
         }
 
     }
