@@ -4,7 +4,7 @@ namespace ExerciseCollection
 	public class Person
 	{
         // define private properties in the field
-        private int	age;
+        private int	age = 0;
 		private string fName="";
 		private string lName="";
 		private double height;
@@ -14,19 +14,50 @@ namespace ExerciseCollection
         public int Age
         {
             get { return age; }
-            set { age = value;}
+            set 
+            { 
+                if (value < 0)
+                {
+                    throw new ArgumentException("Age must be bigger than 0.");
+                }
+                else
+                {
+                    age = value;  
+                }
+                    
+            }
         }
 
         public string FName
         {
             get { return fName; }
-            set { fName = value; }
+            set 
+            { 
+                if (!string.IsNullOrWhiteSpace(value))
+                {
+                    if(value.Length < 2 || value.Length > 10)
+                        throw new ArgumentException("First name must be between 2 and 10 characters.");
+                }
+                else
+                {
+                    fName = value;
+                }
+                
+            }
         }
 
         public string LName
         {
             get { return lName; }
-            set { lName = value; }
+            set 
+            { 
+                if (!string.IsNullOrWhiteSpace(value))   
+                {
+                    if (value.Length < 3 || value.Length > 15)
+                        throw new ArgumentException("Last name must be between 3 and 15 characters.");
+                }
+                lName = value;
+            }
         }
 
         public double Height
@@ -41,33 +72,6 @@ namespace ExerciseCollection
             set { weight = value; }
         }
 
-
-        // Validate properties
-
-        public bool Validate()
-        {
-            var isValid = true;
-
-            if (Age <= 0)
-            {
-                throw new ArgumentException("Age must be bigger than 0.");
-            }
-            if (!string.IsNullOrWhiteSpace(FName))
-            {
-                if(FName.Length < 2 || FName.Length > 10)
-                    throw new ArgumentException("First name must be between 2 and 10 characters.");
-            }
-            if (!string.IsNullOrWhiteSpace(LName))
-                
-            {
-                if (LName.Length < 3 || LName.Length > 15)
-
-                    throw new ArgumentException("Last name must be between 3 and 15 characters.");
-            }
-            return isValid;
-        }
-
-     
     }
 }
 

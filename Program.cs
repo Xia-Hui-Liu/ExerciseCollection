@@ -8,29 +8,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        /*try
+        try
         {
             // Instansiera en person, kommer du direkt åt variablerna?
             // Ja, jag kan direkt åt och sätte värden för dess properties
-            var person = new Person();
+            var p = new Person();
 
-            person.Age = 100;
-            person.FName = "Marie";
-            person.LName = "La";
-            person.Height = 1.66;
-            person.Weight = 54;
-
-            // Validate the person object
-            bool isValid = person.Validate();
-
-            if (isValid)
-                Console.WriteLine($"{person.FName} {person.LName} is {person.Age} years old. She is {person.Weight} kg and {person.Height} meter tall.");
+            p.Age = 10;
+            p.FName = "Mar";
+            p.LName = "La";
+            p.Height = 1.66;
+            p.Weight = 54;
+            
+           Console.WriteLine($"{p.FName} {p.LName} is {p.Age} years old. She is {p.Weight} kg and {p.Height} meter tall.");
         }
-
         catch (ArgumentException ex)
         {
             Console.WriteLine("An error occurred: " + ex.Message);
-        }*/
+        }
 
 
         // create a new instance of PersonHandler
