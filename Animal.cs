@@ -36,6 +36,11 @@ namespace ExerciseCollection
         {
             return "neigh";
         }
+
+        public override string Stats()
+        {
+            return base.Stats();
+        }
     }
 
     internal class Dog : Animal
@@ -45,6 +50,11 @@ namespace ExerciseCollection
         public override string DoSound()
         {
             return "Bark";
+        }
+
+         public override string Stats()
+        {
+            return base.Stats();
         }
         // Kommer du åt den metoden från Animals listan? Varför int?
         // nej. Animals listan innerhåller inte dess metod därför har den ingen åtkomst.
@@ -62,6 +72,11 @@ namespace ExerciseCollection
         {
             return "akjkj";
         }
+
+        public override string Stats()
+        {
+            return base.Stats();
+        }
     }
 
     internal class Worm : Animal
@@ -71,6 +86,11 @@ namespace ExerciseCollection
         {
             return "nnnnn";
         }
+
+        public override string Stats()
+        {
+            return base.Stats();
+        }
     }
 
     internal class Bird : Animal
@@ -79,6 +99,11 @@ namespace ExerciseCollection
         public override string DoSound()
         {
             return "Tweet";
+        }
+
+        public override string Stats()
+        {
+            return base.Stats();
         }
     }
 
@@ -91,10 +116,10 @@ namespace ExerciseCollection
             return "wu....";
         }
 
-        //public override string GetType()
-        //{
-        //    return "Wolf";
-        //}
+        public override string Stats()
+        {
+            return base.Stats();
+        }
     }
 
      internal class Pelican : Bird

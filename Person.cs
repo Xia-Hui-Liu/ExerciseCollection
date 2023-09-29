@@ -27,22 +27,19 @@ namespace ExerciseCollection
                     
             }
         }
-
         public string FName
         {
             get { return fName; }
             set 
             { 
-                if (!string.IsNullOrWhiteSpace(value))
+                if(value.Length < 2 || value.Length > 10)
                 {
-                    if(value.Length < 2 || value.Length > 10)
-                        throw new ArgumentException("First name must be between 2 and 10 characters.");
+                    throw new ArgumentException("First name must be between 2 and 10 characters.");
                 }
                 else
                 {
                     fName = value;
-                }
-                
+                } 
             }
         }
 
@@ -51,12 +48,14 @@ namespace ExerciseCollection
             get { return lName; }
             set 
             { 
-                if (!string.IsNullOrWhiteSpace(value))   
+                if (value.Length < 3 || value.Length > 15)   
                 {
-                    if (value.Length < 3 || value.Length > 15)
-                        throw new ArgumentException("Last name must be between 3 and 15 characters.");
+                   throw new ArgumentException("Last name must be between 3 and 15 characters.");
                 }
-                lName = value;
+                else
+                {
+                    lName = value;
+                }
             }
         }
 

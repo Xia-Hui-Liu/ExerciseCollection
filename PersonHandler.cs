@@ -19,10 +19,7 @@
 								Height = height,
 								Weight = weight
 							};
-
-
 			return person;
-
         }
 
         // calculate BMI for a person and log out information

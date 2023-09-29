@@ -12,15 +12,16 @@ class Program
         {
             // Instansiera en person, kommer du direkt åt variablerna?
             // Ja, jag kan direkt åt och sätte värden för dess properties
-            var p = new Person();
-
-            p.Age = 10;
-            p.FName = "Mar";
-            p.LName = "La";
-            p.Height = 1.66;
-            p.Weight = 54;
-            
-           Console.WriteLine($"{p.FName} {p.LName} is {p.Age} years old. She is {p.Weight} kg and {p.Height} meter tall.");
+            var p = new Person
+            {
+                Age = 10,
+                FName = "Me",
+                LName = "Lars",
+                Height = 1.66,
+                Weight = 54
+            };
+           
+            Console.WriteLine($"{p.FName} {p.LName} is {p.Age} years old. She is {p.Weight} kg and {p.Height} meter tall.");
         }
         catch (ArgumentException ex)
         {
