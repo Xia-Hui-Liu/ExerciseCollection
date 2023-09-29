@@ -14,13 +14,12 @@ class Program
             // Ja, jag kan direkt åt och sätte värden för dess properties
             var p = new Person
             {
-                Age = 0,
-                FName = "Me",
+                Age = 30,
+                FName = "Mor",
                 LName = "Lars",
                 Height = 1.66,
                 Weight = 54
             };
-           
             Console.WriteLine($"{p.FName} {p.LName} is {p.Age} years old. She is {p.Weight} kg and {p.Height} meter tall.");
         }
         catch (ArgumentException ex)

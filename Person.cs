@@ -32,7 +32,7 @@ namespace ExerciseCollection
             get { return fName; }
             set 
             { 
-                if(value.Length < 2 || value.Length > 10)
+                if(string.IsNullOrEmpty(value) || value.Length < 2 || value.Length > 10)
                 {
                     throw new ArgumentException("First name must be between 2 and 10 characters.");
                 }
@@ -48,7 +48,7 @@ namespace ExerciseCollection
             get { return lName; }
             set 
             { 
-                if (value.Length < 3 || value.Length > 15)   
+                if (string.IsNullOrEmpty(value)|| value.Length < 3 || value.Length > 15)   
                 {
                    throw new ArgumentException("Last name must be between 3 and 15 characters.");
                 }
