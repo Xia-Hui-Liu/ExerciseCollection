@@ -14,7 +14,7 @@ class Program
             // Ja, jag kan direkt åt och sätte värden för dess properties
             var p = new Person
             {
-                Age = 10,
+                Age = 0,
                 FName = "Me",
                 LName = "Lars",
                 Height = 1.66,

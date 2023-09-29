@@ -4,7 +4,7 @@ namespace ExerciseCollection
 	public class Person
 	{
         // define private properties in the field
-        private int	age = 0;
+        private int	age;
 		private string fName="";
 		private string lName="";
 		private double height;
@@ -16,7 +16,7 @@ namespace ExerciseCollection
             get { return age; }
             set 
             { 
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Age must be bigger than 0.");
                 }
